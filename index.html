@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산에서 길을 잃었을 때 퀴즈</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        button { font-size: 16px; padding: 10px; margin: 5px; }
+    </style>
+    <script>
+        function checkAnswer(selectedAnswer) {
+            const correctAnswer = "2"; // 정답 설정
+            const result = document.getElementById("result");
+            
+            if (selectedAnswer === correctAnswer) {
+                result.innerHTML = "✅ 정답입니다! 🎉<br><br>다음 장소로 이동하세요! [6번 카라반]";
+                result.style.color = "green";
+            } else {
+                result.innerHTML = "❌ 다시 시도해 보세요!";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>산에서 길을 잃었을 때 퀴즈</h1>
+    <p>산에서 길을 잃었을 때 적절한 대처 방법은?</p>
+    
+    <button onclick="checkAnswer('1. 무작정 걸어간다')">1. 무작정 걸어간다</button>
+    <button onclick="checkAnswer('2. 큰 소리로 도움을 요청하고, 눈에 띄는 곳에서 기다린다')">2. 큰 소리로 도움을 요청하고, 눈에 띄는 곳에서 기다린다</button>
+    <button onclick="checkAnswer('3. 혼자 힘으로 나가려고 노력한다')">3. 혼자 힘으로 나가려고 노력한다</button>
+    <button onclick="checkAnswer('4. 자연인의 삶을 시작한다')">4. 자연인의 삶을 시작한다</button>
+    
+    <p id="result"></p>
+</body>
+</html>
