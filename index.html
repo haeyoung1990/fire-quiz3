@@ -6,14 +6,15 @@
     <title>산에서 길을 잃었을 때 퀴즈</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        button { font-size: 16px; padding: 10px; margin: 5px; }
+        input, button { font-size: 16px; padding: 10px; margin-top: 10px; }
     </style>
     <script>
-        function checkAnswer(selectedAnswer) {
+        function checkAnswer() {
+            const userAnswer = document.getElementById("answer").value.trim();
             const correctAnswer = "2"; // 정답 설정
             const result = document.getElementById("result");
             
-            if (selectedAnswer === correctAnswer) {
+            if (userAnswer === correctAnswer) {
                 result.innerHTML = "✅ 정답입니다! 🎉<br><br>다음 장소로 이동하세요! [6번 카라반]";
                 result.style.color = "green";
             } else {
@@ -27,10 +28,13 @@
     <h1>산에서 길을 잃었을 때 퀴즈</h1>
     <p>산에서 길을 잃었을 때 적절한 대처 방법은?</p>
     
-    <button onclick="checkAnswer('1. 무작정 걸어간다')">1. 무작정 걸어간다</button>
-    <button onclick="checkAnswer('2. 큰 소리로 도움을 요청하고, 눈에 띄는 곳에서 기다린다')">2. 큰 소리로 도움을 요청하고, 눈에 띄는 곳에서 기다린다</button>
-    <button onclick="checkAnswer('3. 혼자 힘으로 나가려고 노력한다')">3. 혼자 힘으로 나가려고 노력한다</button>
-    <button onclick="checkAnswer('4. 자연인의 삶을 시작한다')">4. 자연인의 삶을 시작한다</button>
+    <p>1. 무작정 걸어간다</p>
+    <p>2. 큰 소리로 도움을 요청하고, 눈에 띄는 곳에서 기다린다</p>
+    <p>3. 혼자 힘으로 나가려고 노력한다</p>
+    <p>4. 자연인의 삶을 시작한다</p>
+    
+    <input type="text" id="answer" placeholder="정답 번호 입력">
+    <button onclick="checkAnswer()">제출</button>
     
     <p id="result"></p>
 </body>
